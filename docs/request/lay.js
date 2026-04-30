@@ -20,19 +20,35 @@ const siteConfig = {
 document.addEventListener('DOMContentLoaded', () => {
     if (window.V4) {
         window.V4.init(siteConfig).then(async (app) => {
-            // Load and Merge Shared Menu Data
-            try {
-                const response = await fetch('../lang.menu.json');
-                if (response.ok) {
-                    const menuReq = await response.json();
-                    const currentLang = document.documentElement.lang || 'ko';
-                    const menuData = menuReq[currentLang] || menuReq['_default'] || {};
-                    
-                    // Merge into existing i18n data
-                    Object.assign(app.Data.get(), menuData);
-                    app.Data.apply();
-                }
-            } catch (e) { console.warn('Shared menu data load failed', e); }
+            // Function to merge and apply menu data
+            const applyMenuData = async () => {
+                try {
+                    const response = await fetch('../lang.menu.json');
+                    if (response.ok) {
+                        const menuReq = await response.json();
+                        const currentLang = document.documentElement.lang || 'ko';
+                        const menuData = menuReq[currentLang] || menuReq['_default'] || {};
+                        
+                        // Merge into existing i18n data
+                        Object.assign(app.Data.get(), menuData);
+                        app.Data.apply();
+                        
+                        // Re-calculate prices to update currency unit
+                        if (typeof calculatePrice === 'function') calculatePrice();
+                    }
+                } catch (e) { console.warn('Shared menu data load failed', e); }
+            };
+
+            // Initial Apply
+            await applyMenuData();
+
+            // Re-apply when language changes (Core toggle support)
+            document.querySelectorAll('.damso-lang-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Give a small delay for core to update lang attribute and load data
+                    setTimeout(applyMenuData, 100);
+                });
+            });
 
             initDynamicUI();
             initPriceCalculator();
@@ -70,11 +86,11 @@ function initDynamicUI() {
 function initPriceCalculator() {
     const form = document.getElementById('order-form');
     const totalDisplay = document.getElementById('total-price');
-    const qtyInputs = form.querySelectorAll('.qty-input');
-
+    
     if (!form || !totalDisplay) return;
 
-    const calculate = () => {
+    window.calculatePrice = () => {
+        const qtyInputs = form.querySelectorAll('.qty-input');
         let total = 0;
 
         qtyInputs.forEach(input => {
@@ -112,19 +128,19 @@ function initPriceCalculator() {
         const priceNote = document.querySelector('.price-note');
         if (priceNote) {
             if (total === 0) {
-                priceNote.innerText = core.Util.getText('price_note') || '';
+                priceNote.innerText = window.V4?.Util?.getText('price_note') || '';
             } else if (total < 100000) {
-                priceNote.innerText = core.Util.getText('payment_note_under') || '10만원 미만은 선불 결제입니다.';
+                priceNote.innerText = window.V4?.Util?.getText('payment_note_under') || '10만원 미만은 선불 결제입니다.';
             } else {
                 const deposit = Math.floor(total * 0.3);
-                let note = core.Util.getText('payment_note_over') || '계약금 <b>{amount}원</b> 선불 결제입니다.';
+                let note = window.V4?.Util?.getText('payment_note_over') || '계약금 <b>{amount}원</b> 선불 결제입니다.';
                 note = note.replace('{amount}', deposit.toLocaleString());
                 priceNote.innerHTML = note;
             }
         }
     };
 
-    form.addEventListener('change', calculate);
-    form.addEventListener('input', calculate);
-    calculate();
+    form.addEventListener('change', window.calculatePrice);
+    form.addEventListener('input', window.calculatePrice);
+    window.calculatePrice();
 }

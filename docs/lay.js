@@ -35,19 +35,32 @@ const siteConfig = {
 document.addEventListener('DOMContentLoaded', () => {
     if (window.V4) {
         window.V4.init(siteConfig).then(async (app) => {
-            // Load and Merge Shared Menu Data
-            try {
-                const response = await fetch('./lang.menu.json');
-                if (response.ok) {
-                    const menuReq = await response.json();
-                    const currentLang = document.documentElement.lang || 'ko';
-                    const menuData = menuReq[currentLang] || menuReq['_default'] || {};
-                    
-                    // Merge into existing i18n data
-                    Object.assign(app.Data.get(), menuData);
-                    app.Data.apply();
-                }
-            } catch (e) { console.warn('Shared menu data load failed', e); }
+            // Function to merge and apply menu data
+            const applyMenuData = async () => {
+                try {
+                    const response = await fetch('./lang.menu.json');
+                    if (response.ok) {
+                        const menuReq = await response.json();
+                        const currentLang = document.documentElement.lang || 'ko';
+                        const menuData = menuReq[currentLang] || menuReq['_default'] || {};
+                        
+                        // Merge into existing i18n data
+                        Object.assign(app.Data.get(), menuData);
+                        app.Data.apply();
+                    }
+                } catch (e) { console.warn('Shared menu data load failed', e); }
+            };
+
+            // Initial Apply
+            await applyMenuData();
+
+            // Re-apply when language changes (Core toggle support)
+            document.querySelectorAll('.damso-lang-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Give a small delay for core to update lang attribute and load data
+                    setTimeout(applyMenuData, 100);
+                });
+            });
 
             console.log('Hongsirak V4 App Initialized');
         });
