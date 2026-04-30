@@ -7,9 +7,9 @@ const siteConfig = {
         type: 'form',
         mode: 'live',
         lang: 'ko',
-        theme: true,
-        footer: true,
-        symbol: true
+        theme: false,
+        footer: false,
+        symbol: false
     },
     api: {
         server: 'provider',
