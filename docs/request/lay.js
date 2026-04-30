@@ -28,23 +28,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 const response = await fetch('../lang.menu.json');
                 if (response.ok) {
                     const menuReq = await response.json();
-                    // 핵심: V4 Core의 Data.load를 확장하여 언어 변경 시마다 메뉴 데이터를 자동 병합
-                    const originalLoad = Data.load;
-                    Data.load = async function(userLang) {
-                        const data = await originalLoad.apply(this, arguments);
-                        const menuData = menuReq[userLang] || menuReq['_default'] || {};
-                        Object.assign(data, menuData);
-                        
-                        // 주문서 가격 업데이트 트리거
-                        const form = document.getElementById('order-form');
-                        if (form) form.dispatchEvent(new Event('change'));
-
-                        return data;
+                    // 1. Util.getText를 가로채서 menu.json 데이터를 우선적으로 반환하도록 함 (최종병기)
+                    const originalGetText = Util.getText;
+                    Util.getText = function(key, params) {
+                        const currentLang = document.documentElement.lang || 'ko';
+                        const menuData = menuReq[currentLang] || menuReq['_default'] || {};
+                        if (menuData && menuData[key]) {
+                            return Util.processText(menuData[key], params);
+                        }
+                        return originalGetText.call(Util, key, params);
                     };
 
-                    // 초기 로드 데이터 병합 및 적용
-                    const currentLang = document.documentElement.lang || 'ko';
-                    Object.assign(Data.get(), menuReq[currentLang] || menuReq['_default'] || {});
+                    // 2. 초기 적용
                     Data.apply();
                 }
             } catch (e) { console.warn('[Hongsirak] Shared menu data load failed', e); }
