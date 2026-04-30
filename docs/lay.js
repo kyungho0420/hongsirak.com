@@ -34,8 +34,6 @@ const siteConfig = {
 
 document.addEventListener('DOMContentLoaded', () => {
     if (window.V4) {
-        // V4.init()이 완료되면 core.js가 반드시 window.V4.App에 { Util, Data, ... }를 저장함.
-        // page.js의 반환 구조(app.core.Data)와 무관하게 window.V4.App.Data로 직접 접근.
         window.V4.init(siteConfig).then(async () => {
             const Data = window.V4.App?.Data;
             const Util = window.V4.App?.Util;
@@ -48,11 +46,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     const currentLang = document.documentElement.lang || 'ko';
                     const menuData = menuReq[currentLang] || menuReq['_default'] || {};
 
-                    // 코어 langData에 메뉴 데이터 병합 후 재렌더링
                     Object.assign(Data.get(), menuData);
                     Data.apply();
 
-                    // render-as-html 요소 보호 처리 (innerHTML 강제 적용)
                     document.querySelectorAll('[data-i18n].render-as-html').forEach(el => {
                         const text = Util.getText(el.dataset.i18n);
                         if (text && text !== el.dataset.i18n) el.innerHTML = text;
