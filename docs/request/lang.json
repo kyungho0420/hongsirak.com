@@ -31,24 +31,6 @@
         "payment_note_under": "10만원 미만은 선불 결제입니다.",
         "payment_note_over": "계약금 <b>{amount}원</b> 선불 결제입니다.",
         "currency_unit": "원",
-        
-        "menu_normal_01_title": "고추장 제육볶음",
-        "menu_normal_02_title": "간장 제육볶음",
-        "menu_normal_03_title": "닭불고기",
-        "menu_normal_04_title": "오징어볶음",
-        "menu_normal_05_title": "돈까스",
-        "menu_normal_06_title": "돼지갈비찜",
-        "menu_premium_01_title": "소불고기 도시락",
-        "menu_premium_02_title": "연어 스테이크 도시락",
-        "menu_premium_03_title": "전복 버터구이 도시락",
-        "menu_special_kids_title": "키즈 도시락",
-        "menu_special_vegan_title": "채식 도시락",
-        "buffet_type_01_normal_title": "돌잔치 실속형 (10종)",
-        "buffet_type_01_premium_title": "돌잔치 프리미엄 (12종)",
-        "buffet_type_02_normal_title": "칠순/팔순 실속형 (10종)",
-        "buffet_type_02_premium_title": "칠순/팔순 프리미엄 (12종)",
-        "buffet_type_03_normal_title": "홈파티 실속형 (9종)",
-        "buffet_type_03_premium_title": "홈파티 프리미엄 (11종)"
     },
     "ko": {
         "home_title": "홍시락 신청서",
@@ -97,23 +79,5 @@
         "payment_note_under": "Full payment in advance for under ₩100k.",
         "payment_note_over": "Deposit <b>₩{amount}</b> required in advance.",
         "currency_unit": "₩",
-
-        "menu_normal_01_title": "Spicy Stir-fried Pork",
-        "menu_normal_02_title": "Soy Stir-fried Pork",
-        "menu_normal_03_title": "Chicken Bulgogi",
-        "menu_normal_04_title": "Stir-fried Squid",
-        "menu_normal_05_title": "Pork Cutlet",
-        "menu_normal_06_title": "Braised Pork Ribs",
-        "menu_premium_01_title": "Beef Bulgogi",
-        "menu_premium_02_title": "Salmon Steak",
-        "menu_premium_03_title": "Abalone Butter",
-        "menu_special_kids_title": "Kids Box Lunch",
-        "menu_special_vegan_title": "Vegan Box Lunch",
-        "buffet_type_01_normal_title": "Standard (10 types)",
-        "buffet_type_01_premium_title": "Premium (12 types)",
-        "buffet_type_02_normal_title": "Standard (10 types)",
-        "buffet_type_02_premium_title": "Premium (12 types)",
-        "buffet_type_03_normal_title": "Standard (9 types)",
-        "buffet_type_03_premium_title": "Premium (11 types)"
     }
 }

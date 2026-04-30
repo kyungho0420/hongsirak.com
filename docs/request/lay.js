@@ -19,7 +19,21 @@ const siteConfig = {
 
 document.addEventListener('DOMContentLoaded', () => {
     if (window.V4) {
-        window.V4.init(siteConfig).then((app) => {
+        window.V4.init(siteConfig).then(async (app) => {
+            // Load and Merge Shared Menu Data
+            try {
+                const response = await fetch('../lang.menu.json');
+                if (response.ok) {
+                    const menuReq = await response.json();
+                    const currentLang = document.documentElement.lang || 'ko';
+                    const menuData = menuReq[currentLang] || menuReq['_default'] || {};
+                    
+                    // Merge into existing i18n data
+                    Object.assign(app.Data.get(), menuData);
+                    app.Data.apply();
+                }
+            } catch (e) { console.warn('Shared menu data load failed', e); }
+
             initDynamicUI();
             initPriceCalculator();
         });

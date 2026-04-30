@@ -222,52 +222,6 @@ body {
     margin-bottom: 30px;
 }
 
-.damso-check-input {
-    display: none;
-}
-
-.damso-check-custom {
-    width: 28px;
-    height: 28px;
-    background-color: #fff;
-    border: 2px solid var(--damso-color-border);
-    border-radius: 6px;
-    position: relative;
-    cursor: pointer;
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    flex-shrink: 0;
-}
-
-.damso-check-input:checked + .damso-check-custom {
-    background-color: var(--damso-color-primary);
-    border-color: var(--damso-color-primary);
-}
-
-/* SVG Checkmark for maximum compatibility and visibility */
-.damso-check-custom::after {
-    content: "";
-    position: absolute;
-    display: none;
-    left: 4px;
-    top: 4px;
-    width: 16px;
-    height: 16px;
-    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-
-.damso-check-input:checked + .damso-check-custom::after {
-    display: block;
-}
-
-.damso-check-label {
-    cursor: pointer;
-    font-size: 1.1rem;
-    font-weight: 500;
-    color: var(--damso-color-text);
-    user-select: none;
-}
 
 .damso-note {
     font-size: 0.9rem;
