@@ -34,10 +34,13 @@ const siteConfig = {
 
 document.addEventListener('DOMContentLoaded', () => {
     if (window.V4) {
+        // page.js의 V4.init()은 { core, registerEffect } 구조를 반환함.
+        // Data API는 app.core.Data 경로로 접근해야 함.
         window.V4.init(siteConfig).then(async (app) => {
-            // lang.menu.json 로드 후 코어 langData에 병합
-            // 언어 전환은 ?lang= URL 파라미터 방식으로 페이지 재로드됨.
-            // DOMContentLoaded마다 아래 로직이 자동 실행되므로 별도 이벤트 감지 불필요.
+            const data = app.core?.Data;
+            const util = app.core?.Util;
+            if (!data) return console.warn('[Hongsirak] V4 Data API not available');
+
             try {
                 const response = await fetch('./lang.menu.json');
                 if (response.ok) {
@@ -46,12 +49,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     const menuData = menuReq[currentLang] || menuReq['_default'] || {};
 
                     // 코어 langData에 메뉴 데이터 병합 후 재렌더링
-                    Object.assign(app.Data.get(), menuData);
-                    app.Data.apply();
+                    Object.assign(data.get(), menuData);
+                    data.apply();
 
-                    // render-as-html 요소는 Data.apply() 재호출 시에도 반드시 innerHTML로 보호 처리
+                    // render-as-html 요소 보호 처리
                     document.querySelectorAll('[data-i18n].render-as-html').forEach(el => {
-                        const text = app.Util.getText(el.dataset.i18n);
+                        const text = util.getText(el.dataset.i18n);
                         if (text && text !== el.dataset.i18n) el.innerHTML = text;
                     });
                 }
