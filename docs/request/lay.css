@@ -26,15 +26,6 @@ body {
     margin: 40px auto;
 }
 
-/* --- Standard Header Styling --- */
-.damso-header {
-    background-color: #fff;
-    border-bottom: 1px solid var(--damso-color-border);
-    padding: 60px 20px;
-    text-align: center;
-    margin-bottom: 40px;
-}
-
 .brand-logo {
     font-family: 'Gowun Dodum', serif;
     font-size: 2.8rem;
