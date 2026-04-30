@@ -26,7 +26,7 @@
         "menu_none": "메뉴를 선택해주세요",
         "payment_note_under": "10만원 미만은 선불 결제입니다.",
         "payment_note_over": "계약금 <b>{amount}원</b> 선불 결제입니다.",
-        "currency_unit": "원",
+        "currency_unit": "원"
     },
     "ko": {
         "home_title": "홍시락 신청서",
@@ -70,6 +70,6 @@
         "menu_none": "Select a menu",
         "payment_note_under": "Full payment in advance for under ₩100k.",
         "payment_note_over": "Deposit <b>₩{amount}</b> required in advance.",
-        "currency_unit": "₩",
+        "currency_unit": "₩"
     }
 }
