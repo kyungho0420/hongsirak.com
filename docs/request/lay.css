@@ -87,24 +87,37 @@ body {
 
 .menu-item {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    gap: 12px;
     background: #fdfdfd;
-    padding: 10px 14px;
+    padding: 16px;
     border: 1px solid #eee;
     border-radius: 8px;
 }
 
-.menu-item label {
+.menu-item__top label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--damso-color-text);
+}
+
+.menu-item__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-item__price {
     font-size: 0.9rem;
-    flex: 1;
-    margin-right: 10px;
+    color: var(--damso-color-primary);
+    font-weight: 700;
 }
 
 .qty-input {
-    width: 70px !important;
+    width: 80px !important;
     text-align: center;
-    height: 36px !important;
+    height: 38px !important;
+    border-color: var(--damso-color-border) !important;
 }
 
 /* Sticky Price Bar */
