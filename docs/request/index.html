@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex,nofollow">
+    <title data-i18n="form_title">도시락 신청서</title>
+
+    <link rel="icon" href="https://www.hongsirak.com/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Pretendard:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- [Tier 1] Damso Core -->
+    <link rel="stylesheet" href="https://dev.dam.so/_inc/ex/v4/core/core.css">
+    <script src="https://dev.dam.so/_inc/ex/v4/core/core.js"></script>
+
+    <!-- [Tier 2] Damso View: Form -->
+    <link rel="stylesheet" href="https://dev.dam.so/_inc/ex/v4/view/form.css">
+    <script src="https://dev.dam.so/_inc/ex/v4/view/form.js"></script>
+
+    <!-- [Tier 3] User Custom -->
+    <link rel="stylesheet" href="./lay.css">
+    <script src="./lay.js" defer></script>
+</head>
+<body>
+    <div class="damso-app">
+        <div class="damso-container">
+            <form id="order-form" class="damso-form" novalidate>
+                <input type="hidden" name="form" value="hongsirak">
+
+                <!-- 1. Customer Info -->
+                <div class="damso-card">
+                    <div class="damso-card__header">
+                        <h2 data-i18n="customer_info_title">신청인 정보</h2>
+                    </div>
+                    <div class="damso-grid damso-grid--cols-1" style="gap: 16px;">
+                        <div class="damso-group">
+                            <label for="name" class="damso-label" data-i18n="form_label_name"></label>
+                            <input type="text" id="name" name="name" required class="damso-input">
+                        </div>
+                        <div class="damso-group">
+                            <label for="phone" class="damso-label" data-i18n="form_label_phone"></label>
+                            <input type="tel" id="phone" name="phone" required class="damso-input" placeholder="010-0000-0000">
+                        </div>
+                        <div class="damso-group">
+                            <label for="email" class="damso-label" data-i18n="form_label_email"></label>
+                            <input type="email" id="email" name="email" required class="damso-input">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Menu Selection -->
+                <div class="damso-card">
+                    <div class="damso-card__header">
+                        <h2 data-i18n="menu_selection_title">도시락 선택</h2>
+                    </div>
+                    
+                    <div class="menu-sections">
+                        <!-- Normal -->
+                        <div class="menu-category">
+                            <h3 class="menu-category__title" data-i18n="cat_normal"></h3>
+                            <div class="menu-items-grid">
+                                <div class="menu-item">
+                                    <label data-i18n="menu_normal_01_title"></label>
+                                    <input type="number" name="normal_01" class="damso-input qty-input" min="0" placeholder="0" data-price="6900">
+                                </div>
+                                <div class="menu-item">
+                                    <label data-i18n="menu_normal_02_title"></label>
+                                    <input type="number" name="normal_02" class="damso-input qty-input" min="0" placeholder="0" data-price="6900">
+                                </div>
+                                <div class="menu-item">
+                                    <label data-i18n="menu_normal_03_title"></label>
+                                    <input type="number" name="normal_03" class="damso-input qty-input" min="0" placeholder="0" data-price="6900">
+                                </div>
+                                <div class="menu-item">
+                                    <label data-i18n="menu_normal_04_title"></label>
+                                    <input type="number" name="normal_04" class="damso-input qty-input" min="0" placeholder="0" data-price="7900">
+                                </div>
+                                <div class="menu-item">
+                                    <label data-i18n="menu_normal_05_title"></label>
+                                    <input type="number" name="normal_05" class="damso-input qty-input" min="0" placeholder="0" data-price="8900">
+                                </div>
+                                <div class="menu-item">
+                                    <label data-i18n="menu_normal_06_title"></label>
+                                    <input type="number" name="normal_06" class="damso-input qty-input" min="0" placeholder="0" data-price="9900">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Premium -->
+                        <div class="menu-category">
+                            <h3 class="menu-category__title" data-i18n="cat_premium"></h3>
+                            <div class="menu-items-grid">
+                                <div class="menu-item">
+                                    <label data-i18n="menu_premium_01_title"></label>
+                                    <input type="number" name="premium_01" class="damso-input qty-input" min="0" placeholder="0" data-price="16900">
+                                </div>
+                                <div class="menu-item">
+                                    <label data-i18n="menu_premium_02_title"></label>
+                                    <input type="number" name="premium_02" class="damso-input qty-input" min="0" placeholder="0" data-price="25900">
+                                </div>
+                                <div class="menu-item">
+                                    <label data-i18n="menu_premium_03_title"></label>
+                                    <input type="number" name="premium_03" class="damso-input qty-input" min="0" placeholder="0" data-price="25900">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Special -->
+                        <div class="menu-category">
+                            <h3 class="menu-category__title" data-i18n="cat_special"></h3>
+                            <div class="menu-items-grid">
+                                <div class="menu-item">
+                                    <label data-i18n="menu_special_kids_title"></label>
+                                    <input type="number" name="special_kids" class="damso-input qty-input" min="0" placeholder="0" data-price="6900">
+                                </div>
+                                <div class="menu-item">
+                                    <label data-i18n="menu_special_vegan_title"></label>
+                                    <input type="number" name="special_vegan" class="damso-input qty-input" min="0" placeholder="0" data-price="9900">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Buffet -->
+                        <div class="menu-category">
+                            <h3 class="menu-category__title" data-i18n="cat_buffet"></h3>
+                            <div class="menu-items-grid">
+                                <div class="menu-item">
+                                    <label data-i18n="buffet_type_01_normal_title"></label>
+                                    <input type="number" name="buffet_01_n" class="damso-input qty-input" min="0" placeholder="0" data-price="250000">
+                                </div>
+                                <div class="menu-item">
+                                    <label data-i18n="buffet_type_01_premium_title"></label>
+                                    <input type="number" name="buffet_01_p" class="damso-input qty-input" min="0" placeholder="0" data-price="400000">
+                                </div>
+                                <div class="menu-item">
+                                    <label data-i18n="buffet_type_02_normal_title"></label>
+                                    <input type="number" name="buffet_02_n" class="damso-input qty-input" min="0" placeholder="0" data-price="250000">
+                                </div>
+                                <div class="menu-item">
+                                    <label data-i18n="buffet_type_02_premium_title"></label>
+                                    <input type="number" name="buffet_02_p" class="damso-input qty-input" min="0" placeholder="0" data-price="400000">
+                                </div>
+                                <div class="menu-item">
+                                    <label data-i18n="buffet_type_03_normal_title"></label>
+                                    <input type="number" name="buffet_03_n" class="damso-input qty-input" min="0" placeholder="0" data-price="200000">
+                                </div>
+                                <div class="menu-item">
+                                    <label data-i18n="buffet_type_03_premium_title"></label>
+                                    <input type="number" name="buffet_03_p" class="damso-input qty-input" min="0" placeholder="0" data-price="300000">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Pickup & Delivery -->
+                <div class="damso-card">
+                    <div class="damso-card__header">
+                        <h2 data-i18n="pickup_delivery_title"></h2>
+                    </div>
+
+                    <div class="damso-grid damso-grid--cols-1" style="gap: 16px;">
+                        <div class="damso-group">
+                            <label class="damso-label" data-i18n="pickup_method"></label>
+                            <select name="pickup_method" id="pickup_method" class="damso-select">
+                                <option value="pickup" data-i18n="store_pickup"></option>
+                                <option value="delivery" data-i18n="delivery"></option>
+                            </select>
+                        </div>
+                        <div class="damso-group">
+                            <label class="damso-label" data-i18n="desired_date"></label>
+                            <input type="date" name="pickup_date" class="damso-input" required>
+                        </div>
+                        <div class="damso-group hidden" id="group-address">
+                            <label class="damso-label" data-i18n="delivery_address"></label>
+                            <input type="text" name="address" class="damso-input" data-i18n-placeholder="delivery_address_ph">
+                            <p class="damso-note delivery_note" data-i18n="delivery_note"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Additional Message -->
+                <div class="damso-card">
+                    <div class="damso-card__header">
+                        <h2 data-i18n="additional_requests_title"></h2>
+                    </div>
+                    <div class="damso-group">
+                        <textarea class="damso-textarea" name="message" rows="3"></textarea>
+                    </div>
+                </div>
+
+                <!-- Sticky Price Display -->
+                <div class="price-sticky-bar">
+                    <div class="price-content">
+                        <span class="price-label" data-i18n="label_estimated_total">Total</span>
+                        <span class="price-value" id="total-price">0원</span>
+                    </div>
+                    <p class="price-note" data-i18n="price_note"></p>
+                </div>
+
+                <!-- Submit -->
+                <div class="damso-submit-area">
+                    <div class="damso-check-group">
+                        <input type="checkbox" name="agree" id="agree" class="damso-check-input" required>
+                        <label for="agree" class="damso-check-label" data-i18n="label_agree"></label>
+                    </div>
+                    <button type="submit" class="damso-btn damso-btn--submit damso-btn--full">
+                        <span data-i18n="btn_submit"></span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,184 @@
+/*
+    Tier 3: User Custom Style (Hongsirak Request)
+*/
+
+:root {
+    --damso-color-bg: #FAF9F8;           /* Very Light Grey/Beige */
+    --damso-color-surface: #FFFFFF;
+    --damso-color-text: #2D2D2D;
+    --damso-color-primary: #EB6A44;      /* Hongsirak Persimmon */
+    --damso-color-secondary: #5D4037;    /* Brown for accents */
+    --damso-color-label: #666666;
+    --damso-color-border: #E0E0E0;
+    --damso-color-accent: #FF9E80;       /* Soft Persimmon */
+    --damso-radius: 12px;
+    --damso-input-height: 48px;
+}
+
+body {
+    font-family: "Pretendard", -apple-system, sans-serif;
+    background-color: var(--damso-color-bg);
+    color: var(--damso-color-text);
+}
+
+.damso-container {
+    max-width: 640px;
+    margin: 40px auto;
+}
+
+.damso-card {
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--damso-color-border);
+    background-color: var(--damso-color-surface);
+    border-radius: var(--damso-radius);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+}
+
+.damso-card__header {
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--damso-color-primary);
+    display: inline-block;
+    padding-bottom: 4px;
+}
+
+.damso-card__header h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--damso-color-primary);
+}
+
+.damso-label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+/* Menu Category Styling */
+.menu-category {
+    margin-bottom: 2rem;
+}
+
+.menu-category:last-child {
+    margin-bottom: 0;
+}
+
+.menu-category__title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    padding-left: 10px;
+    border-left: 4px solid var(--damso-color-primary);
+    color: var(--damso-color-text);
+}
+
+.menu-items-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+@media (max-width: 480px) {
+    .menu-items-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fdfdfd;
+    padding: 10px 14px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+}
+
+.menu-item label {
+    font-size: 0.9rem;
+    flex: 1;
+    margin-right: 10px;
+}
+
+.qty-input {
+    width: 70px !important;
+    text-align: center;
+    height: 36px !important;
+}
+
+/* Sticky Price Bar */
+.price-sticky-bar {
+    position: sticky;
+    bottom: 24px;
+    z-index: 100;
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border: 2px solid var(--damso-color-primary);
+    border-radius: 20px;
+    padding: 1.25rem;
+    box-shadow: 0 10px 25px rgba(235, 106, 68, 0.15);
+    text-align: center;
+}
+
+.price-content {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 12px;
+}
+
+.price-label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--damso-color-label);
+}
+
+.price-value {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--damso-color-primary);
+}
+
+.price-note {
+    margin-top: 6px;
+    font-size: 0.8rem;
+    color: var(--damso-color-label);
+}
+
+/* Buttons */
+.damso-btn--submit {
+    background-color: var(--damso-color-primary);
+    color: #fff;
+    border: none;
+    height: 56px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: var(--damso-radius);
+    transition: all 0.3s ease;
+}
+
+.damso-btn--submit:hover {
+    background-color: #d45936;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(235, 106, 68, 0.3);
+}
+
+.damso-submit-area {
+    margin-top: 40px;
+    padding-bottom: 80px;
+}
+
+.damso-check-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.damso-note {
+    font-size: 0.85rem;
+    color: var(--damso-color-label);
+    margin-top: 8px;
+}
