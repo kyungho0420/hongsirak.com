@@ -5,7 +5,7 @@ const siteConfig = {
     meta: {
         framework: 'V4',
         type: 'form',
-        mode: 'demo',
+        mode: 'live',
         lang: 'ko',
         theme: true,
         footer: true,
