@@ -35,6 +35,12 @@ const siteConfig = {
 document.addEventListener('DOMContentLoaded', () => {
     if (window.V4) {
         window.V4.init(siteConfig).then(app => {
+            // Force HTML rendering for specific elements
+            setTimeout(() => {
+                document.querySelectorAll('.render-as-html').forEach(el => {
+                    el.innerHTML = el.textContent;
+                });
+            }, 100);
             console.log('Hongsirak V4 App Initialized');
         });
     }
