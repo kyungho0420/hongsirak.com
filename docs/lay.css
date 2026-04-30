@@ -224,22 +224,3 @@ body {
     box-shadow: 0 8px 20px rgba(235, 106, 68, 0.25);
     transform: scale(1.02);
 }
-
-/* [Slider Customization] */
-.damso-grid--slider {
-    gap: 32px;
-    padding: 1rem 20px 4rem;
-    scrollbar-width: none;
-}
-
-.damso-grid--slider::-webkit-scrollbar { display: none; }
-
-.damso-grid--slider > .damso-card {
-    flex: 0 0 340px;
-}
-
-/* [Map & Profile] */
-.damso-card__map {
-    border-radius: var(--damso-radius);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-}
