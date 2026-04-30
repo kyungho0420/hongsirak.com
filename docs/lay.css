@@ -1,11 +1,11 @@
-/* lay.css - Hongsirak Premium (V4.6 Standard) */
+/* lay.css - Hongsirak Premium (Standardized V4.6) */
 :root {
-    /* --- Hongsirak Brand Identity --- */
+    /* --- Brand Identity --- */
     --damso-color-primary: #E84E1B;      /* Ripe Persimmon */
     --damso-color-secondary: #F5A623;    /* Warm Orange */
     --damso-color-bg: #FDFDFB;           /* Warm Ivory */
     --damso-color-surface: #FFFFFF;      /* Paper White */
-    --damso-color-border: #EAE7E2;       /* Soft Stone */
+    --damso-color-border: #EAE7E2;       /* Soft Stone Border */
     --damso-color-text: #2D241E;         /* Coffee Bean */
     --damso-color-text-weak: #756D66;
     --damso-color-accent: #B35C1E;
@@ -19,6 +19,10 @@
     
     --damso-nav-bg-image: linear-gradient(135deg, rgba(253, 253, 251, 0.95), rgba(255, 255, 255, 0.95));
     --damso-radius: 16px;
+    
+    /* [Shadows] */
+    --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.04);
+    --shadow-hover: 0 20px 40px rgba(232, 78, 27, 0.12);
 }
 
 [data-theme="dark"] {
@@ -32,7 +36,7 @@
     --damso-nav-bg-image: linear-gradient(135deg, rgba(26, 23, 21, 0.95), rgba(38, 33, 30, 0.95));
 }
 
-/* Base Refinement */
+/* Base Styles */
 body {
     font-family: 'Gowun Dodum', 'Pretendard', sans-serif;
     color: var(--damso-color-text);
@@ -41,7 +45,7 @@ body {
     word-break: keep-all;
 }
 
-/* Premium Section Header */
+/* [Section Header] - Spacing & Rhythm Fix */
 .damso-section {
     padding: 120px 0;
 }
@@ -59,7 +63,7 @@ body {
     font-weight: 800;
     text-align: center;
     letter-spacing: -0.04em;
-    margin-bottom: 0.8rem;
+    margin-bottom: 0; /* Reset for ::after control */
 }
 
 .damso-section h2::after {
@@ -68,7 +72,7 @@ body {
     width: 35px;
     height: 5px;
     background-color: var(--damso-color-primary);
-    margin: 1.5rem auto 0;
+    margin: 1.5rem auto 2.5rem; /* Sufficient bottom margin to prevent overlap */
     border-radius: 10px;
 }
 
@@ -81,53 +85,137 @@ body {
     font-weight: 400;
 }
 
-/* Card - Elegant Minimalist */
+/* [Card] - Elegant Standard */
 .damso-card {
     background-color: var(--damso-card-color-bg);
     border: 1px solid var(--damso-card-color-border);
     border-radius: var(--damso-radius);
     transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    box-shadow: var(--shadow-soft);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .damso-card:hover {
     transform: translateY(-12px);
-    box-shadow: 0 20px 40px rgba(232, 78, 27, 0.1);
+    box-shadow: var(--shadow-hover);
     border-color: var(--damso-color-primary);
 }
 
 .damso-card__image-wrapper {
     aspect-ratio: 16 / 10;
     background-color: #F0EDE9;
+    overflow: hidden;
+}
+
+.damso-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.damso-card__content {
+    padding: 30px;
+    flex-grow: 1;
 }
 
 .damso-card__title {
     font-size: 1.4rem;
     font-weight: 700;
     margin-bottom: 0.8rem;
+    color: var(--damso-color-text);
 }
 
 .damso-card__composition {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     color: var(--damso-color-text-weak);
+    line-height: 1.6;
+}
+
+/* [Price List] - Reference: Yoga/Andar Style */
+.damso-price-list {
+    margin-top: auto;
+    padding: 0 30px 30px;
     border-top: 1px solid var(--damso-color-border);
-    padding-top: 1.2rem;
-    margin-top: 1.2rem;
+    padding-top: 20px;
 }
 
-/* Price Badge - Soft Glow */
-.damso-price-info__value {
-    background-color: var(--damso-color-bg);
-    color: var(--damso-color-primary);
-    padding: 0.5rem 1.2rem;
-    border-radius: 2rem;
+.damso-price-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+}
+
+.damso-price-item__label {
+    font-size: 0.85rem;
+    color: var(--damso-color-text-weak);
+    font-weight: 500;
+}
+
+.damso-price-item__value {
+    font-size: 1.1rem;
     font-weight: 800;
-    font-size: 1.05rem;
-    border: 1px solid var(--damso-color-border);
-    box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+    color: var(--damso-color-primary);
 }
 
-/* Slider Layout - Seamless */
+/* [Buffet Specific] */
+.damso-buffet-group {
+    padding-top: 20px;
+    border-top: 1px solid var(--damso-color-border);
+}
+
+.damso-buffet-item {
+    margin-bottom: 25px;
+}
+
+.damso-buffet-item h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--damso-color-text);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.damso-buffet-item h4::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    background-color: var(--damso-color-primary);
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+/* [Buttons] */
+.damso-btn {
+    padding: 16px 36px;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    border-radius: var(--damso-radius);
+    background-color: var(--damso-btn-color-bg);
+    color: var(--damso-btn-color-text);
+    font-weight: 700;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(232, 78, 27, 0.15);
+}
+
+.damso-btn:hover {
+    background-color: var(--damso-btn-color-bg-hover);
+    box-shadow: 0 8px 20px rgba(232, 78, 27, 0.25);
+    transform: scale(1.02);
+}
+
+.damso-btn--outline {
+    background-color: transparent;
+    border: 2px solid var(--damso-color-primary);
+    color: var(--damso-color-primary);
+    box-shadow: none;
+}
+
+/* [Slider Customization] */
 .damso-grid--slider {
     gap: 32px;
     padding: 1rem 20px 4rem;
@@ -140,43 +228,7 @@ body {
     flex: 0 0 340px;
 }
 
-/* Buffet Detail */
-.damso-buffet-item {
-    margin-bottom: 2rem;
-}
-
-.damso-buffet-item h4 {
-    color: var(--damso-color-primary);
-    font-size: 1.1rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-}
-
-.damso-buffet-item hr {
-    border-color: var(--damso-color-border);
-    margin: 1.5rem 0;
-}
-
-/* Buttons - Premium Feel */
-.damso-btn {
-    padding: 16px 36px;
-    font-size: 1rem;
-    letter-spacing: 0.05em;
-    box-shadow: 0 4px 10px rgba(232, 78, 27, 0.15);
-}
-
-.damso-btn:hover {
-    box-shadow: 0 8px 20px rgba(232, 78, 27, 0.25);
-}
-
-.damso-btn--outline {
-    border: 2px solid var(--damso-color-primary);
-    color: var(--damso-color-primary);
-    background: transparent;
-    box-shadow: none;
-}
-
-/* Map & Profile */
+/* [Map & Profile] */
 .damso-card__map {
     border-radius: var(--damso-radius);
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);

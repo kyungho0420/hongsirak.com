@@ -7,7 +7,10 @@
         "contact_number": "010-3271-5977",
         "email_address": "hongsirak@hongsirak.com",
         "email_href": "mailto:hongsirak@hongsirak.com",
-        "btn_talk_url": "https://talk.naver.com/W4XXXX"
+        "btn_talk_url": "https://talk.naver.com/W4XXXX",
+        "label_standard": "실속형",
+        "label_premium": "프리미엄",
+        "label_per_person": "1인 기준"
     },
     "ko": {
         "meta_title": "홍시락 - 프리미엄 수제 도시락 & 케이터링",
@@ -92,6 +95,9 @@
         "section_location_desc": "홍시락은 언제나 고객님의 문의를 환영합니다.",
         "address_label": "오시는 길",
         "contact_label": "연락처",
+        "price_label_standard": "실속형",
+        "price_label_premium": "프리미엄",
+        "price_label_unit": "1인 기준",
         "btn_call": "전화 상담",
         "btn_talk": "네이버 톡톡 상담",
 
@@ -159,6 +165,9 @@
         "section_location_desc": "HongsiRak always welcomes your inquiries.",
         "address_label": "Address",
         "contact_label": "Contact",
+        "price_label_standard": "Standard",
+        "price_label_premium": "Premium",
+        "price_label_unit": "Per Person",
         "btn_call": "Call Now",
         "btn_talk": "Naver Talk",
 
