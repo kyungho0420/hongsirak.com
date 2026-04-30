@@ -231,7 +231,7 @@ body {
     background-color: #fff;
     border: 1px solid var(--damso-color-border);
     border-radius: var(--damso-radius);
-    padding: 40px;
+    padding: 0;
     box-shadow: var(--shadow-soft);
 }
 
