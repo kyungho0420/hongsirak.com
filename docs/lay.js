@@ -35,10 +35,6 @@ const siteConfig = {
 document.addEventListener('DOMContentLoaded', () => {
     if (window.V4) {
         window.V4.init(siteConfig).then(app => {
-            // Process HTML in translations
-            document.querySelectorAll('.js-html').forEach(el => {
-                el.innerHTML = el.textContent;
-            });
             console.log('Hongsirak V4 App Initialized');
         });
     }
