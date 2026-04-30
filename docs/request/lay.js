@@ -93,6 +93,19 @@ function initPriceCalculator() {
         } else {
             totalDisplay.classList.remove('active');
         }
+
+        // Dynamic Payment Note
+        const priceNote = document.querySelector('.price-note');
+        if (priceNote) {
+            if (total === 0) {
+                priceNote.innerText = window.V4?.i18n?.get('price_note') || '';
+            } else if (total < 100000) {
+                priceNote.innerText = '10만원 미만은 선불 결제입니다.';
+            } else {
+                const deposit = Math.floor(total * 0.3);
+                priceNote.innerHTML = `계약금 <b>${deposit.toLocaleString()}원</b> 선불 결제입니다.`;
+            }
+        }
     };
 
     form.addEventListener('change', calculate);

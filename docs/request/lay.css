@@ -173,9 +173,14 @@ body {
 }
 
 .price-note {
-    margin-top: 6px;
-    font-size: 0.8rem;
+    margin-top: 8px;
+    font-size: 0.95rem;
     color: var(--damso-color-label);
+}
+
+.price-note b {
+    color: var(--damso-color-primary);
+    font-weight: 800;
 }
 
 /* Buttons */
