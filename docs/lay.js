@@ -5,7 +5,7 @@ const siteConfig = {
         type: 'page',
         mode: 'live',
         lang: 'ko',
-        theme: true,
+        theme: false,
         footer: true,
         symbol: false,
         scroll_smooth: true

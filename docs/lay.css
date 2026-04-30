@@ -1,7 +1,7 @@
-/* lay.css - Hongsirak Premium (Standardized V4.6) */
+/* lay.css - Hongsirak Premium (Light Mode Only) */
 :root {
     /* --- Brand Identity --- */
-    --damso-color-primary: #E84E1B;      /* Ripe Persimmon */
+    --damso-color-primary: #EB6A44;      /* Soft Persimmon */
     --damso-color-secondary: #F5A623;    /* Warm Orange */
     --damso-color-bg: #FDFDFB;           /* Warm Ivory */
     --damso-color-surface: #FFFFFF;      /* Paper White */
@@ -11,7 +11,7 @@
     --damso-color-accent: #B35C1E;
 
     --damso-btn-color-bg: var(--damso-color-primary);
-    --damso-btn-color-bg-hover: #C63D12;
+    --damso-btn-color-bg-hover: #D65A35;
     --damso-btn-color-text: #FFFFFF;
     
     --damso-card-color-bg: var(--damso-color-surface);
@@ -22,18 +22,7 @@
     
     /* [Shadows] */
     --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.04);
-    --shadow-hover: 0 20px 40px rgba(232, 78, 27, 0.12);
-}
-
-[data-theme="dark"] {
-    --damso-color-primary: #FF7043;
-    --damso-color-secondary: #FFB74D;
-    --damso-color-bg: #1A1715;           /* Deep Cacao */
-    --damso-color-surface: #26211E;      /* Dark Chocolate */
-    --damso-color-border: #3A322D;
-    --damso-color-text: #FBE9E7;
-    --damso-color-text-weak: #A0948F;
-    --damso-nav-bg-image: linear-gradient(135deg, rgba(26, 23, 21, 0.95), rgba(38, 33, 30, 0.95));
+    --shadow-hover: 0 20px 40px rgba(235, 106, 68, 0.12);
 }
 
 /* Base Styles */
@@ -45,7 +34,7 @@ body {
     word-break: keep-all;
 }
 
-/* [Section Header] - Spacing & Rhythm Fix */
+/* [Section Header] - Icon & Rhythm */
 .damso-section {
     padding: 120px 0;
 }
@@ -54,8 +43,13 @@ body {
     background-color: #F8F6F2;
 }
 
-[data-theme="dark"] .damso-section:nth-of-type(even) {
-    background-color: #211C19;
+.damso-section__icon {
+    display: block;
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--damso-color-primary);
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
 }
 
 .damso-section h2 {
@@ -63,16 +57,22 @@ body {
     font-weight: 800;
     text-align: center;
     letter-spacing: -0.04em;
-    margin-bottom: 0; /* Reset for ::after control */
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 1.5rem;
 }
 
+/* Section Title Underline */
 .damso-section h2::after {
     content: '';
-    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
     width: 35px;
-    height: 5px;
+    height: 4px;
     background-color: var(--damso-color-primary);
-    margin: 1.5rem auto 2.5rem; /* Sufficient bottom margin to prevent overlap */
     border-radius: 10px;
 }
 
@@ -170,23 +170,30 @@ body {
     margin-bottom: 25px;
 }
 
+.damso-buffet-item:last-child {
+    margin-bottom: 0;
+}
+
 .damso-buffet-item h4 {
     font-size: 1rem;
     font-weight: 700;
     color: var(--damso-color-text);
-    margin-bottom: 8px;
+    margin-bottom: 12px;
     display: flex;
     align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
-.damso-buffet-item h4::before {
+.damso-buffet-item h4::before,
+.damso-buffet-item h4::after {
     content: '';
     display: inline-block;
     width: 4px;
     height: 4px;
     background-color: var(--damso-color-primary);
     border-radius: 50%;
-    margin-right: 8px;
+    margin: 0 8px;
 }
 
 /* [Buttons] */
@@ -199,12 +206,12 @@ body {
     color: var(--damso-btn-color-text);
     font-weight: 700;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(232, 78, 27, 0.15);
+    box-shadow: 0 4px 10px rgba(235, 106, 68, 0.15);
 }
 
 .damso-btn:hover {
     background-color: var(--damso-btn-color-bg-hover);
-    box-shadow: 0 8px 20px rgba(232, 78, 27, 0.25);
+    box-shadow: 0 8px 20px rgba(235, 106, 68, 0.25);
     transform: scale(1.02);
 }
 
