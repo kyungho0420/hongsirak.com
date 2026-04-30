@@ -34,6 +34,10 @@ body {
     word-break: keep-all;
 }
 
+.brand-slogan {
+    margin-top: 1.5rem;
+}
+
 /* [Section Header] - Icon & Rhythm */
 .damso-section {
     padding: 120px 0;
