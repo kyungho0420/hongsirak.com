@@ -270,10 +270,6 @@ body {
     border-right: 1px solid #eee;
 }
 
-.refund-table .tr-divider {
-    height: 10px;
-}
-
 .refund-table .tr-divider td {
     border: none;
     padding: 0;

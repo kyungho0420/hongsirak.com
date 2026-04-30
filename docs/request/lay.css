@@ -26,6 +26,25 @@ body {
     margin: 40px auto;
 }
 
+/* Header */
+.request-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.request-header h1 {
+    font-family: 'Gowun Dodum', serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--damso-color-primary);
+    margin-bottom: 12px;
+}
+
+.request-header p {
+    font-size: 1.1rem;
+    color: var(--damso-color-label);
+}
+
 .damso-card {
     padding: 2rem;
     margin-bottom: 1.5rem;
@@ -182,6 +201,7 @@ body {
     padding-bottom: 80px;
 }
 
+/* Custom Checkbox */
 .damso-check-group {
     display: flex;
     align-items: center;
@@ -191,17 +211,39 @@ body {
 }
 
 .damso-check-input {
-    width: 22px;
-    height: 22px;
-    accent-color: var(--damso-color-primary);
-    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    width: 24px;
+    height: 24px;
     border: 2px solid var(--damso-color-border);
     border-radius: 4px;
+    background-color: #fff;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.damso-check-input:checked {
+    background-color: var(--damso-color-primary);
+    border-color: var(--damso-color-primary);
+}
+
+/* Custom checkmark V */
+.damso-check-input:checked::after {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 3px;
+    width: 6px;
+    height: 11px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
 }
 
 .damso-check-label {
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 500;
     color: var(--damso-color-text);
     user-select: none;
