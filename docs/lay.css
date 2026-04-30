@@ -1,9 +1,9 @@
 /* lay.css - Hongsirak Custom Style */
 :root {
     /* Color System */
-    --main-color: #F06A3A; /* 홍시색 (Persimmon) */
-    --main-color-dark: #D45428;
-    --main-color-light: #FCE1D8;
+    --main-color: #FF6B35; /* 더 선명한 홍시색 (Persimmon) */
+    --main-color-dark: #E55B2B;
+    --main-color-light: #FFEBDE;
     
     --text-color: #333333;
     --bg-color: #FFFFFF;
