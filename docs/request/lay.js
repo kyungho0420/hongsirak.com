@@ -81,11 +81,11 @@ function initPriceCalculator() {
         const formattedPrice = total.toLocaleString();
         
         // Handle currency display based on language
-        const currentLang = window.V4?.lang || 'ko';
-        if (currentLang === 'ko') {
-            totalDisplay.innerText = `${formattedPrice}원`;
-        } else {
+        const unit = window.V4?.i18n?.get('currency_unit') || '원';
+        if (unit === '₩') {
             totalDisplay.innerText = `₩${formattedPrice}`;
+        } else {
+            totalDisplay.innerText = `${formattedPrice}${unit}`;
         }
 
         if (total > 0) {
@@ -100,10 +100,12 @@ function initPriceCalculator() {
             if (total === 0) {
                 priceNote.innerText = window.V4?.i18n?.get('price_note') || '';
             } else if (total < 100000) {
-                priceNote.innerText = '10만원 미만은 선불 결제입니다.';
+                priceNote.innerText = window.V4?.i18n?.get('payment_note_under') || '10만원 미만은 선불 결제입니다.';
             } else {
                 const deposit = Math.floor(total * 0.3);
-                priceNote.innerHTML = `계약금 <b>${deposit.toLocaleString()}원</b> 선불 결제입니다.`;
+                let note = window.V4?.i18n?.get('payment_note_over') || '계약금 <b>{amount}원</b> 선불 결제입니다.';
+                note = note.replace('{amount}', deposit.toLocaleString());
+                priceNote.innerHTML = note;
             }
         }
     };
