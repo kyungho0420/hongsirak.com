@@ -98,12 +98,12 @@ function initPriceCalculator() {
         const priceNote = document.querySelector('.price-note');
         if (priceNote) {
             if (total === 0) {
-                priceNote.innerText = window.V4?.i18n?.get('price_note') || '';
+                priceNote.innerText = core.Util.getText('price_note') || '';
             } else if (total < 100000) {
-                priceNote.innerText = window.V4?.i18n?.get('payment_note_under') || '10만원 미만은 선불 결제입니다.';
+                priceNote.innerText = core.Util.getText('payment_note_under') || '10만원 미만은 선불 결제입니다.';
             } else {
                 const deposit = Math.floor(total * 0.3);
-                let note = window.V4?.i18n?.get('payment_note_over') || '계약금 <b>{amount}원</b> 선불 결제입니다.';
+                let note = core.Util.getText('payment_note_over') || '계약금 <b>{amount}원</b> 선불 결제입니다.';
                 note = note.replace('{amount}', deposit.toLocaleString());
                 priceNote.innerHTML = note;
             }

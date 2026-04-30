@@ -26,6 +26,7 @@ body {
     margin: 40px auto;
 }
 
+/* --- Framework Dynamic Header Styling --- */
 .brand-logo {
     font-family: 'Gowun Dodum', serif;
     font-size: 2.8rem;
@@ -40,27 +41,6 @@ body {
     color: var(--damso-color-label);
     max-width: 500px;
     margin: 0 auto;
-}
-
-.damso-lang-switcher {
-    margin-top: 25px;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-}
-
-.damso-lang-btn {
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: #bbb;
-    text-decoration: none;
-    transition: all 0.3s;
-}
-
-.damso-lang-btn.active {
-    color: var(--damso-color-primary);
-    text-decoration: underline;
-    text-underline-offset: 4px;
 }
 
 /* --- Form Cards --- */
@@ -233,7 +213,7 @@ body {
     padding-bottom: 100px;
 }
 
-/* --- Custom Checkbox (Visible V Mark) --- */
+/* --- Custom Checkbox (SVG V Mark) --- */
 .damso-check-group {
     display: flex;
     align-items: center;
@@ -247,8 +227,8 @@ body {
 }
 
 .damso-check-custom {
-    width: 26px;
-    height: 26px;
+    width: 28px;
+    height: 28px;
     background-color: #fff;
     border: 2px solid var(--damso-color-border);
     border-radius: 6px;
@@ -263,17 +243,18 @@ body {
     border-color: var(--damso-color-primary);
 }
 
+/* SVG Checkmark for maximum compatibility and visibility */
 .damso-check-custom::after {
     content: "";
     position: absolute;
     display: none;
-    left: 8px;
-    top: 3px;
-    width: 7px;
-    height: 13px;
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    transform: rotate(45deg);
+    left: 4px;
+    top: 4px;
+    width: 16px;
+    height: 16px;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .damso-check-input:checked + .damso-check-custom::after {
