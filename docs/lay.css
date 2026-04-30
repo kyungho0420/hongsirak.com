@@ -221,13 +221,6 @@ body {
     transform: scale(1.02);
 }
 
-.damso-btn--outline {
-    background-color: transparent;
-    border: 2px solid var(--damso-color-primary);
-    color: var(--damso-color-primary);
-    box-shadow: none;
-}
-
 /* [Slider Customization] */
 .damso-grid--slider {
     gap: 32px;
