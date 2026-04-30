@@ -34,12 +34,12 @@ const siteConfig = {
 
 document.addEventListener('DOMContentLoaded', () => {
     if (window.V4) {
-        // page.js의 V4.init()은 { core, registerEffect } 구조를 반환함.
-        // Data API는 app.core.Data 경로로 접근해야 함.
-        window.V4.init(siteConfig).then(async (app) => {
-            const data = app.core?.Data;
-            const util = app.core?.Util;
-            if (!data) return console.warn('[Hongsirak] V4 Data API not available');
+        // V4.init()이 완료되면 core.js가 반드시 window.V4.App에 { Util, Data, ... }를 저장함.
+        // page.js의 반환 구조(app.core.Data)와 무관하게 window.V4.App.Data로 직접 접근.
+        window.V4.init(siteConfig).then(async () => {
+            const Data = window.V4.App?.Data;
+            const Util = window.V4.App?.Util;
+            if (!Data) return console.warn('[Hongsirak] V4.App.Data not available');
 
             try {
                 const response = await fetch('./lang.menu.json');
@@ -49,16 +49,16 @@ document.addEventListener('DOMContentLoaded', () => {
                     const menuData = menuReq[currentLang] || menuReq['_default'] || {};
 
                     // 코어 langData에 메뉴 데이터 병합 후 재렌더링
-                    Object.assign(data.get(), menuData);
-                    data.apply();
+                    Object.assign(Data.get(), menuData);
+                    Data.apply();
 
-                    // render-as-html 요소 보호 처리
+                    // render-as-html 요소 보호 처리 (innerHTML 강제 적용)
                     document.querySelectorAll('[data-i18n].render-as-html').forEach(el => {
-                        const text = util.getText(el.dataset.i18n);
+                        const text = Util.getText(el.dataset.i18n);
                         if (text && text !== el.dataset.i18n) el.innerHTML = text;
                     });
                 }
-            } catch (e) { console.warn('Shared menu data load failed', e); }
+            } catch (e) { console.warn('[Hongsirak] Shared menu data load failed', e); }
 
             console.log('Hongsirak V4 App Initialized');
         });
