@@ -263,6 +263,10 @@ body {
     text-align: center;
 }
 
+.refund-table tr:last-child td {
+    border-bottom: 0;
+}
+
 .refund-table .td-group {
     background-color: #fdfdfd;
     font-weight: 700;
