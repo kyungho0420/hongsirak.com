@@ -28,15 +28,30 @@ document.addEventListener('DOMContentLoaded', () => {
                 const response = await fetch('../lang.menu.json');
                 if (response.ok) {
                     const menuReq = await response.json();
-                    const currentLang = document.documentElement.lang || 'ko';
-                    const menuData = menuReq[currentLang] || menuReq['_default'] || {};
+                    const applyMenuData = () => {
+                        const currentLang = document.documentElement.lang || 'ko';
+                        const menuData = menuReq[currentLang] || menuReq['_default'] || {};
+                        
+                        Object.assign(Data.get(), menuData);
+                        Data.apply();
+                        
+                        document.querySelectorAll('[data-i18n].render-as-html').forEach(el => {
+                            const text = Util.getText(el.dataset.i18n);
+                            if (text && text !== el.dataset.i18n) el.innerHTML = text;
+                        });
+                        
+                        // 주문서 가격 업데이트 트리거
+                        const form = document.getElementById('order-form');
+                        if (form) form.dispatchEvent(new Event('change'));
+                    };
 
-                    Object.assign(Data.get(), menuData);
-                    Data.apply();
+                    applyMenuData();
 
-                    document.querySelectorAll('[data-i18n].render-as-html').forEach(el => {
-                        const text = Util.getText(el.dataset.i18n);
-                        if (text && text !== el.dataset.i18n) el.innerHTML = text;
+                    // V4 코어의 비동기 다국어 변경(fetch) 후 커스텀 데이터 재적용
+                    document.addEventListener('click', (e) => {
+                        if (e.target.closest('.damso-lang-btn, [data-lang-set], [data-i18n-set]')) {
+                            setTimeout(applyMenuData, 100);
+                        }
                     });
                 }
             } catch (e) { console.warn('[Hongsirak] Shared menu data load failed', e); }
