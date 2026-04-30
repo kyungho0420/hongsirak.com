@@ -1,151 +1,239 @@
-/* lay.css - Hongsirak Custom Style */
+/* lay.css - Hongsirak Premium Catering Design System */
 :root {
-    /* Color System */
-    --main-color: #FF6B35; /* 더 선명한 홍시색 (Persimmon) */
-    --main-color-dark: #E55B2B;
-    --main-color-light: #FFEBDE;
+    /* [Brand Colors] */
+    --main-color: #E84E1B;        /* 진한 홍시색 (Deep Ripe Persimmon) */
+    --main-color-hover: #C63D12;
+    --main-color-soft: #FFF2ED;   /* 부드러운 홍시 살색 (Soft Flesh) */
     
-    --text-color: #333333;
-    --bg-color: #FFFFFF;
-    --bg-light: #F9F9F9;
-    --border-color: #E5E5E5;
+    --bg-primary: #FDFDFB;       /* 따뜻한 느낌의 미색 (Warm Off-White) */
+    --bg-secondary: #F8F6F2;     /* 약간 더 어두운 베이지 */
+    
+    --text-primary: #1A1A1B;     /* 거의 검정에 가까운 차분한 색 */
+    --text-secondary: #4A4A4A;   /* 서브 텍스트 */
+    --text-muted: #8E8E93;       /* 아주 흐린 텍스트 */
+    
+    --border-soft: #EAE7E2;      /* 부드러운 구분선 */
+    --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
+    --shadow-md: 0 10px 30px rgba(0,0,0,0.08);
+    
+    --radius-lg: 16px;
+    --radius-md: 12px;
+    --radius-sm: 8px;
 
-    /* Typography Override */
-    --font-primary: 'Noto Sans KR', sans-serif;
+    /* Framework Overrides */
+    --damso-radius: var(--radius-md);
 }
 
+/* Base Style */
 body {
-    font-family: var(--font-primary);
-    color: var(--text-color);
-    background-color: var(--bg-color);
+    font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
 }
 
-/* Damso Card Overrides */
+/* Section Header Refinement */
+.damso-section {
+    padding: 100px 0;
+}
+
+.damso-section h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 12px;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+}
+
+.damso-section h2::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 3px;
+    background-color: var(--main-color);
+    margin: 20px auto 0;
+    border-radius: 2px;
+}
+
+.damso-section__description {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-bottom: 60px;
+    font-weight: 400;
+}
+
+/* Card Design (Premium & Neat) */
 .damso-card {
-    border: 1px solid var(--border-color);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: #FFFFFF;
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
 }
 
 .damso-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--main-color-soft);
+}
+
+.damso-card__image-wrapper {
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background-color: #F0F0F0; /* Placeholder color */
+}
+
+.damso-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.damso-card:hover .damso-card__image {
+    transform: scale(1.08);
+}
+
+.damso-card__content {
+    padding: 24px;
+    flex-grow: 1;
 }
 
 .damso-card__title {
-    color: var(--main-color);
+    font-size: 1.25rem;
     font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
 }
 
+.damso-card:hover .damso-card__title {
+    color: var(--main-color);
+}
+
+.damso-card__composition {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid #F5F5F5;
+}
+
+/* Price Badge */
 .damso-price-info {
-    margin-top: 15px;
+    margin-top: auto;
+    padding: 0 24px 24px;
     display: flex;
     justify-content: flex-end;
 }
 
 .damso-price-info__value {
-    background-color: var(--main-color-light);
+    display: inline-block;
+    background-color: var(--main-color-soft);
     color: var(--main-color);
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-weight: 700;
-    font-size: 0.95em;
+    padding: 6px 16px;
+    border-radius: 30px;
+    font-weight: 800;
+    font-size: 1rem;
+    letter-spacing: 0.02em;
 }
 
-.damso-card__composition {
-    font-size: 0.85em;
-    color: #666;
-    margin-top: 8px;
-    line-height: 1.4;
-    border-top: 1px dashed var(--border-color);
-    padding-top: 8px;
-}
-
-/* Grid Slider */
+/* Slider Layout Improvements */
 .damso-grid--slider {
     display: flex !important;
     overflow-x: auto;
-    gap: 20px;
-    padding-bottom: 20px;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
+    gap: 30px;
+    padding: 20px 0 40px;
+    scroll-padding: 0 20px;
 }
 
 .damso-grid--slider::-webkit-scrollbar {
-    height: 6px;
-}
-
-.damso-grid--slider::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 10px;
+    height: 4px;
 }
 
 .damso-grid--slider::-webkit-scrollbar-thumb {
-    background: var(--main-color-light);
+    background: #E0E0E0;
     border-radius: 10px;
 }
 
-.damso-grid--slider::-webkit-scrollbar-thumb:hover {
-    background: var(--main-color);
-}
-
 .damso-grid--slider > .damso-card {
-    flex: 0 0 300px;
-    scroll-snap-align: start;
+    flex: 0 0 320px;
 }
 
-/* Buffet Item Styles */
+/* Buffet Item Specifics */
 .damso-buffet-item {
-    padding: 10px 0;
+    margin-bottom: 24px;
+}
+
+.damso-buffet-item:last-child {
+    margin-bottom: 0;
 }
 
 .damso-buffet-item h4 {
-    color: var(--text-color);
-    font-size: 0.9em;
-    margin-bottom: 5px;
-    display: flex;
-    align-items: center;
-}
-
-.damso-buffet-item h4::before {
-    content: '•';
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
     color: var(--main-color);
-    margin-right: 5px;
 }
 
-hr {
-    border: 0;
-    border-top: 1px solid var(--border-color);
-    margin: 10px 0;
+.damso-buffet-item .damso-card__composition {
+    border-top: none;
+    padding-top: 0;
+    margin-top: 0;
+    font-size: 0.85rem;
 }
 
-/* Section Backgrounds */
+/* Background Variations */
 .damso-section--light {
-    background-color: var(--bg-light);
+    background-color: var(--bg-secondary);
 }
 
-/* Button Overrides */
+/* Map & Contact */
+.damso-card__map {
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.damso-profile-list__item {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border-soft);
+}
+
+.damso-profile-list__label {
+    color: var(--main-color);
+    margin-right: 15px;
+}
+
+/* Buttons */
 .damso-btn {
     background-color: var(--main-color);
-    color: #fff;
     border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: 500;
-    transition: background-color 0.2s ease;
+    padding: 14px 28px;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    color: #FFFFFF;
+    transition: all 0.3s ease;
 }
 
 .damso-btn:hover {
-    background-color: var(--main-color-dark);
+    background-color: var(--main-color-hover);
+    box-shadow: 0 4px 12px rgba(232, 78, 27, 0.2);
 }
 
 .damso-btn--outline {
     background-color: transparent;
-    border: 1px solid var(--main-color);
+    border: 1.5px solid var(--main-color);
     color: var(--main-color);
 }
 
 .damso-btn--outline:hover {
     background-color: var(--main-color);
-    color: #fff;
+    color: #FFFFFF;
 }
