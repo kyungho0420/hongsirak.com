@@ -64,6 +64,14 @@ function initPriceCalculator() {
         let total = 0;
 
         qtyInputs.forEach(input => {
+            // Enforce 3-digit limit
+            if (input.value.length > 3) {
+                input.value = input.value.slice(0, 3);
+            }
+            if (parseInt(input.value) > 999) {
+                input.value = "999";
+            }
+
             const qty = parseInt(input.value) || 0;
             const price = parseInt(input.dataset.price) || 0;
             total += qty * price;

@@ -224,3 +224,56 @@ body {
     box-shadow: 0 8px 20px rgba(235, 106, 68, 0.25);
     transform: scale(1.02);
 }
+
+/* [Refund Policy Table] */
+.refund-policy {
+    margin-top: 10px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.refund-policy__row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+}
+
+.refund-policy__row strong {
+    color: var(--damso-color-text);
+    margin-right: 15px;
+}
+
+.refund-policy__divider {
+    height: 1px;
+    background: var(--damso-color-border);
+    margin: 15px 0;
+    opacity: 0.5;
+}
+
+.refund-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+.refund-table td {
+    padding: 8px 0;
+    border-bottom: 1px dashed #eee;
+}
+
+.refund-table td:first-child {
+    font-weight: 700;
+    color: var(--damso-color-primary);
+    width: 100px;
+}
+
+.refund-table td:last-child {
+    text-align: right;
+    color: var(--damso-color-label);
+}
+
+.refund-table tr:last-child td {
+    border-bottom: none;
+}
