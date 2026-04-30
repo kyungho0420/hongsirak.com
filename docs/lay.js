@@ -7,7 +7,7 @@ const siteConfig = {
         lang: 'ko',
         theme: true,
         footer: true,
-        symbol: true,
+        symbol: false,
         scroll_smooth: true
     },
     api: {

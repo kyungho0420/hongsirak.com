@@ -13,7 +13,8 @@
         "nav_location": "오시는 길",
 
         "section_normal_title": "일반 도시락 (실속형)",
-        "section_normal_desc": "든든한 한 끼를 책임지는 가성비 만점 실속형 도시락입니다. (구성: 메인 요리 + 겉절이 + 샐러드 + 반찬 3종 + 밥)",
+        "section_normal_desc": "든든한 한 끼를 책임지는 가성비 만점 실속형 도시락입니다.",
+        "menu_normal_comp": "구성: 메인 요리 + 겉절이 + 샐러드 + 반찬 3종 + 밥",
         "menu_normal_01_title": "고추장 제육볶음",
         "menu_normal_01_price": "6,900원",
         "menu_normal_02_title": "간장 제육볶음",
@@ -28,7 +29,8 @@
         "menu_normal_06_price": "9,900원",
 
         "section_premium_title": "고급 도시락 (프리미엄)",
-        "section_premium_desc": "중요한 모임과 행사를 빛내줄 품격 있는 고급 도시락입니다. (구성: 선택 메인 + 제육볶음 + 샐러드 + 튀김류 + 겉절이 + 반찬 3종)",
+        "section_premium_desc": "중요한 모임과 행사를 빛내줄 품격 있는 고급 도시락입니다.",
+        "menu_premium_comp": "구성: 선택 메인 + 제육볶음 + 샐러드 + 튀김류 + 겉절이 + 반찬 3종",
         "menu_premium_01_title": "소불고기 도시락",
         "menu_premium_01_price": "16,900원",
         "menu_premium_02_title": "연어 스테이크 도시락",
@@ -108,7 +110,8 @@
         "nav_location": "Location",
 
         "section_normal_title": "Classic Bento (Practical)",
-        "section_normal_desc": "A cost-effective, hearty meal. (Includes: Main Dish + Fresh Kimchi + Salad + 3 Side Dishes + Rice)",
+        "section_normal_desc": "A cost-effective, hearty meal for your daily energy.",
+        "menu_normal_comp": "Includes: Main Dish + Fresh Kimchi + Salad + 3 Sides + Rice",
         "menu_normal_01_title": "Gochujang Stir-fried Pork",
         "menu_normal_01_price": "6,900 KRW",
         "menu_normal_02_title": "Soy Sauce Stir-fried Pork",
@@ -123,7 +126,8 @@
         "menu_normal_06_price": "9,900 KRW",
 
         "section_premium_title": "Premium Bento",
-        "section_premium_desc": "Elegant premium bento for important meetings and events. (Includes: Main + Stir-fried Pork + Salad + Fried dish + Kimchi + 3 Side Dishes)",
+        "section_premium_desc": "Elegant premium bento for important meetings and events.",
+        "menu_premium_comp": "Includes: Main + Stir-fried Pork + Salad + Fried dish + Kimchi + 3 Side Dishes",
         "menu_premium_01_title": "Beef Bulgogi",
         "menu_premium_01_price": "16,900 KRW",
         "menu_premium_02_title": "Salmon Steak",

@@ -36,10 +36,86 @@ body {
     font-weight: 700;
 }
 
+.damso-price-info {
+    margin-top: 15px;
+    display: flex;
+    justify-content: flex-end;
+}
+
 .damso-price-info__value {
+    background-color: var(--main-color-light);
+    color: var(--main-color);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.95em;
+}
+
+.damso-card__composition {
+    font-size: 0.85em;
+    color: #666;
+    margin-top: 8px;
+    line-height: 1.4;
+    border-top: 1px dashed var(--border-color);
+    padding-top: 8px;
+}
+
+/* Grid Slider */
+.damso-grid--slider {
+    display: flex !important;
+    overflow-x: auto;
+    gap: 20px;
+    padding-bottom: 20px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.damso-grid--slider::-webkit-scrollbar {
+    height: 6px;
+}
+
+.damso-grid--slider::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.damso-grid--slider::-webkit-scrollbar-thumb {
+    background: var(--main-color-light);
+    border-radius: 10px;
+}
+
+.damso-grid--slider::-webkit-scrollbar-thumb:hover {
+    background: var(--main-color);
+}
+
+.damso-grid--slider > .damso-card {
+    flex: 0 0 300px;
+    scroll-snap-align: start;
+}
+
+/* Buffet Item Styles */
+.damso-buffet-item {
+    padding: 10px 0;
+}
+
+.damso-buffet-item h4 {
     color: var(--text-color);
-    font-weight: bold;
-    font-size: 1.1em;
+    font-size: 0.9em;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.damso-buffet-item h4::before {
+    content: '•';
+    color: var(--main-color);
+    margin-right: 5px;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid var(--border-color);
+    margin: 10px 0;
 }
 
 /* Section Backgrounds */
