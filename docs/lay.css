@@ -231,7 +231,7 @@ body {
     background-color: #fff;
     border: 1px solid var(--damso-color-border);
     border-radius: var(--damso-radius);
-    padding: 0;
+    padding: 0 0 1em 0;
     box-shadow: var(--shadow-soft);
 }
 
@@ -261,10 +261,6 @@ body {
     padding: 15px 12px;
     border-bottom: 1px solid #eee;
     text-align: center;
-}
-
-.refund-table tr:last-child td {
-    border-bottom: 0;
 }
 
 .refund-table .td-group {
