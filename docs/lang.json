@@ -96,8 +96,6 @@
         "price_label_premium": "프리미엄",
         "price_label_unit": "1인 기준",
         "btn_call": "전화 상담",
-        "btn_talk": "네이버 톡톡 상담",
-
         "btn_talk": "네이버 톡톡 상담"
     },
     "en": {
@@ -159,8 +157,6 @@
         "price_label_premium": "Premium",
         "price_label_unit": "Per Person",
         "btn_call": "Call Now",
-        "btn_talk": "Naver Talk",
-
         "btn_talk": "Naver Talk"
     }
 }
