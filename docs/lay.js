@@ -49,12 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             } catch (e) { console.warn('Shared menu data load failed', e); }
 
-            // Force HTML rendering for specific elements
-            setTimeout(() => {
-                document.querySelectorAll('.render-as-html').forEach(el => {
-                    el.innerHTML = el.textContent;
-                });
-            }, 100);
             console.log('Hongsirak V4 App Initialized');
         });
     }
