@@ -88,9 +88,9 @@
         "guide_delivery_label": "배송 안내",
         "guide_delivery_desc": "전주 및 전북 전 지역 배달 가능 (거리별 배송비 상이)",
         "guide_payment_label": "결제 안내",
-        "guide_payment_desc": "10만원 미만 '전액 선금', 10만원 이상 '30% 계약금' 지급",
+        "guide_payment_desc": "10만원 미만: 전액 선금<br>10만원 이상: 30% 계약금 지급",
         "guide_refund_label": "취소 및 환불 규정",
-        "guide_refund_desc": "• <b>10만원 미만</b>: 전날까지 취소 시 100% 환불 (당일 불가)<br>• <b>10만원 이상</b>: 7일 전(전액), 6~2일 전(30~70% 위약금), 1일 전~당일(환불 불가)",
+        "guide_refund_desc": "<b>10만원 미만</b>: 전날까지 취소 시 100% 환불 (당일 불가)<br><br><b>10만원 이상</b><br>7일 전(전액), 6~2일 전(30~70% 위약금)<br>1일 전~당일(환불 불가)",
 
         "section_location_desc": "홍시락은 언제나 고객님의 문의를 환영합니다.",
         "price_label_standard": "실속형",
