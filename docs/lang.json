@@ -87,7 +87,12 @@
         "inquiry_label": "문의하기",
         "inquiry_desc": "홈페이지, 네이버 톡톡, 전화 상담이 모두 가능합니다.",
         "btn_call": "전화 상담",
-        "btn_talk": "네이버 톡톡 상담"
+        "btn_talk": "네이버 톡톡 상담",
+        "section_contact_title": "문의하기",
+        "section_contact_desc": "도시락 및 케이터링 관련 문의사항을 남겨주시면 정성껏 답변해 드리겠습니다.",
+        "form_placeholder_email": "이메일 주소",
+        "form_placeholder_msg": "문의 내용을 입력해 주세요.",
+        "btn_submit": "보내기"
     },
     "en": {
         "home_title": "HongsiRak",
@@ -177,6 +182,11 @@
         "inquiry_label": "Inquiry",
         "inquiry_desc": "Available via Website, Naver TalkTalk, or Phone consultation.",
         "btn_call": "Call Now",
-        "btn_talk": "Naver TalkTalk"
+        "btn_talk": "Naver TalkTalk",
+        "section_contact_title": "Contact Us",
+        "section_contact_desc": "If you have any questions about bento or catering, please leave a message.",
+        "form_placeholder_email": "Email Address",
+        "form_placeholder_msg": "Please enter your message.",
+        "btn_submit": "Send Message"
     }
 }
