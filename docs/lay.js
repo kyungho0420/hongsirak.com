@@ -43,27 +43,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 const response = await fetch('./lang.menu.json');
                 if (response.ok) {
                     const menuReq = await response.json();
-                    const applyMenuData = () => {
-                        const currentLang = document.documentElement.lang || 'ko';
-                        const menuData = menuReq[currentLang] || menuReq['_default'] || {};
-                        
-                        Object.assign(Data.get(), menuData);
-                        Data.apply();
-                        
-                        document.querySelectorAll('[data-i18n].render-as-html').forEach(el => {
-                            const text = Util.getText(el.dataset.i18n);
-                            if (text && text !== el.dataset.i18n) el.innerHTML = text;
-                        });
+                    // 핵심: V4 Core의 Data.load를 확장하여 언어 변경 시마다 메뉴 데이터를 자동 병합
+                    const originalLoad = Data.load;
+                    Data.load = async function(userLang) {
+                        const data = await originalLoad.apply(this, arguments);
+                        const menuData = menuReq[userLang] || menuReq['_default'] || {};
+                        Object.assign(data, menuData);
+                        return data;
                     };
 
-                    applyMenuData();
-
-                    // V4 코어의 비동기 다국어 변경(fetch) 후 커스텀 데이터 재적용
-                    document.addEventListener('click', (e) => {
-                        if (e.target.closest('.damso-lang-btn, [data-lang-set], [data-i18n-set]')) {
-                            setTimeout(applyMenuData, 100);
-                        }
-                    });
+                    // 초기 로드 데이터 병합 및 적용
+                    const currentLang = document.documentElement.lang || 'ko';
+                    Object.assign(Data.get(), menuReq[currentLang] || menuReq['_default'] || {});
+                    Data.apply();
                 }
             } catch (e) { console.warn('[Hongsirak] Shared menu data load failed', e); }
 
