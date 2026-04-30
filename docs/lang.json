@@ -1,18 +1,17 @@
 {
     "_default": {
-        "home_title": "홍시락",
-        "home_description": "전주 프리미엄 도시락 & 케이터링",
-        "rep_name": "홍길동",
+        "rep_name": "홍성희",
         "address_text": "전북특별자치도 전주시 덕진구 기린대로 1114 2층",
         "contact_number": "010-3271-5977",
         "email_address": "hongsirak@hongsirak.com",
         "email_href": "mailto:hongsirak@hongsirak.com",
-        "btn_talk_url": "https://talk.naver.com/W4XXXX",
         "label_standard": "실속형",
         "label_premium": "프리미엄",
         "label_per_person": "1인 기준"
     },
     "ko": {
+        "home_title": "홍시락",
+        "home_description": "전주 프리미엄 도시락 & 케이터링",
         "meta_title": "홍시락 - 프리미엄 수제 도시락 & 케이터링",
         "meta_description": "전주 전 지역 배달. 실속형부터 고급 프리미엄, 뷔페 세트까지 정성을 다해 준비합니다.",
         "nav_home": "홈",
@@ -22,7 +21,6 @@
         "nav_buffet": "뷔페 세트",
         "nav_guide": "이용 안내",
         "nav_location": "오시는 길",
-
         "section_normal_title": "일반 도시락",
         "section_normal_desc": "든든한 한 끼를 책임지는 가성비 만점 실속형 도시락입니다.",
         "menu_normal_comp": "메인 요리 + 겉절이 + 샐러드 + 반찬 3종 + 밥",
@@ -38,7 +36,6 @@
         "menu_normal_05_price": "8,900원",
         "menu_normal_06_title": "돼지갈비찜",
         "menu_normal_06_price": "9,900원",
-
         "section_premium_title": "고급 도시락",
         "section_premium_desc": "중요한 모임과 행사를 빛내줄 품격 있는 고급 도시락입니다.",
         "menu_premium_comp": "선택 메인 + 제육볶음 + 샐러드 + 튀김류 + 겉절이 + 반찬 3종",
@@ -48,7 +45,6 @@
         "menu_premium_02_price": "25,900원",
         "menu_premium_03_title": "전복 버터구이 도시락",
         "menu_premium_03_price": "25,900원",
-
         "section_special_title": "특수 도시락",
         "section_special_desc": "아이들을 위한 맞춤 메뉴와 건강을 생각한 채식 메뉴를 준비했습니다.",
         "menu_special_kids_title": "키즈 도시락",
@@ -57,7 +53,6 @@
         "menu_special_vegan_title": "채식 도시락",
         "menu_special_vegan_desc": "두부스테이크(메인), 버섯탕수, 겉절이, 샐러드, 나물 및 반찬 3종, 잡곡밥",
         "menu_special_vegan_price": "9,900원",
-
         "section_buffet_title": "뷔페 도시락 세트",
         "section_buffet_desc": "10인 기준 케이터링 세트입니다. 특별한 날, 더욱 풍성하게 즐겨보세요.",
         "buffet_type_01": "돌잔치 세트",
@@ -67,7 +62,6 @@
         "buffet_type_01_premium_title": "돌잔치 프리미엄 (12종)",
         "buffet_type_01_premium_desc": "소불고기, 연어스테이크, 낙지볶음, 닭강정, 오징어숙회, 닭가슴살 또띠아말이, 전류, 잡채, 샐러드, 겉절이, 꼬마 궁중 떡볶이, 미니 주먹밥",
         "buffet_type_01_premium_price": "400,000원",
-
         "buffet_type_02": "칠순/팔순잔치 세트",
         "buffet_type_02_normal_title": "칠순/팔순 실속형 (10종)",
         "buffet_type_02_normal_desc": "돼지갈비찜, 오징어숙회, 새우튀김, 전류, 샐러드, 겉절이, 제철나물, 잡채, 무쌈말이, 미니 주먹밥",
@@ -75,7 +69,6 @@
         "buffet_type_02_premium_title": "칠순/팔순 프리미엄 (12종)",
         "buffet_type_02_premium_desc": "소불고기, 전복찜, 연어스테이크, 잡채, 게살튀김, 전류, 샐러드, 겉절이, 홍어회무침, 제철나물, 닭가슴살 또띠아말이, 미니 주먹밥",
         "buffet_type_02_premium_price": "400,000원",
-
         "buffet_type_03": "집들이/홈파티 세트",
         "buffet_type_03_normal_title": "홈파티 실속형 (9종)",
         "buffet_type_03_normal_desc": "제육볶음, 오징어숙회, 새우튀김, 잡채, 샐러드, 겉절이, 치킨너겟, 전류, 미니 주먹밥",
@@ -83,14 +76,12 @@
         "buffet_type_03_premium_title": "홈파티 프리미엄 (11종)",
         "buffet_type_03_premium_desc": "연어스테이크, 소불고기, 오징어볶음, 새우튀김, 잡채, 샐러드, 겉절이, 또띠아말이, 꼬지전, 닭강정, 미니 주먹밥",
         "buffet_type_03_premium_price": "300,000원",
-
         "section_guide_title": "배송 및 주문 안내",
         "section_guide_desc": "전주 전 지역 배달 가능하며, 최소 5~6일 전 예약을 권장합니다.",
         "guide_delivery_label": "배송 안내",
         "guide_delivery_desc": "전주 전 지역 배달 가능 (거리별 배송비 상이)",
         "guide_order_label": "주문 안내",
         "guide_order_desc": "최소 5~6일 전 예약 권장 (단체 주문 시 메뉴 조율 가능)",
-
         "section_location_desc": "홍시락은 언제나 고객님의 문의를 환영합니다.",
         "price_label_standard": "실속형",
         "price_label_premium": "프리미엄",
@@ -98,7 +89,9 @@
         "btn_call": "도시락 주문"
     },
     "en": {
-        "meta_title": "HongsiRak - Premium Catering & Box Lunch",
+        "home_title": "Hongsirak",
+        "home_description": "Jeonju Premium Lunch Box & Catering",
+        "meta_title": "Hongsirak - Premium Catering & Box Lunch",
         "meta_description": "Delivery in Jeonju. Practical, Premium, and Buffet sets prepared with care.",
         "nav_home": "Home",
         "nav_normal": "Classic",
@@ -107,7 +100,6 @@
         "nav_buffet": "Buffet",
         "nav_guide": "Guide",
         "nav_location": "Location",
-
         "section_normal_title": "Classic Box Lunch",
         "section_normal_desc": "A cost-effective, hearty meal for your daily energy.",
         "menu_normal_comp": "Main + Fresh Kimchi + Salad + 3 Sides + Rice",
@@ -123,7 +115,6 @@
         "menu_normal_05_price": "₩8,900",
         "menu_normal_06_title": "Braised Pork Ribs",
         "menu_normal_06_price": "₩9,900",
-
         "section_premium_title": "Premium Box Lunch",
         "section_premium_desc": "Elegant box lunch for important meetings and events.",
         "menu_premium_comp": "Premium Main + Stir-fried Pork + Salad + Fried dish + Kimchi + 3 Sides",
@@ -133,7 +124,6 @@
         "menu_premium_02_price": "₩25,900",
         "menu_premium_03_title": "Abalone Butter",
         "menu_premium_03_price": "₩25,900",
-
         "section_special_title": "Special Box Lunch",
         "section_special_desc": "Custom menus for children and health-conscious vegan options.",
         "menu_special_kids_title": "Kids Box Lunch",
@@ -142,7 +132,6 @@
         "menu_special_vegan_title": "Vegan Box Lunch",
         "menu_special_vegan_desc": "Tofu Steak, Mushroom Tangsu, Sides, Rice",
         "menu_special_vegan_price": "₩9,900",
-
         "section_buffet_title": "Buffet Box Lunch Set",
         "section_buffet_desc": "Catering set for 10+ people. Make your special day more abundant.",
         "buffet_type_01": "First Birthday Set",
@@ -150,12 +139,10 @@
         "buffet_type_01_normal_price": "₩250,000",
         "buffet_type_01_premium_title": "Premium (12 types)",
         "buffet_type_01_premium_price": "₩400,000",
-
         "section_guide_title": "Delivery & Ordering",
         "section_guide_desc": "Delivery available in Jeonju. Booking 5-6 days in advance recommended.",
         "guide_delivery_label": "Delivery Info",
         "guide_order_label": "Order Info",
-
         "section_location_desc": "HongsiRak always welcomes your inquiries.",
         "price_label_standard": "Standard",
         "price_label_premium": "Premium",
