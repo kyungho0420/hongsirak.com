@@ -1,0 +1,75 @@
+/* lay.css - Hongsirak Custom Style */
+:root {
+    /* Color System */
+    --main-color: #F06A3A; /* 홍시색 (Persimmon) */
+    --main-color-dark: #D45428;
+    --main-color-light: #FCE1D8;
+    
+    --text-color: #333333;
+    --bg-color: #FFFFFF;
+    --bg-light: #F9F9F9;
+    --border-color: #E5E5E5;
+
+    /* Typography Override */
+    --font-primary: 'Noto Sans KR', sans-serif;
+}
+
+body {
+    font-family: var(--font-primary);
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+
+/* Damso Card Overrides */
+.damso-card {
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.damso-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.damso-card__title {
+    color: var(--main-color);
+    font-weight: 700;
+}
+
+.damso-price-info__value {
+    color: var(--text-color);
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+/* Section Backgrounds */
+.damso-section--light {
+    background-color: var(--bg-light);
+}
+
+/* Button Overrides */
+.damso-btn {
+    background-color: var(--main-color);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.damso-btn:hover {
+    background-color: var(--main-color-dark);
+}
+
+.damso-btn--outline {
+    background-color: transparent;
+    border: 1px solid var(--main-color);
+    color: var(--main-color);
+}
+
+.damso-btn--outline:hover {
+    background-color: var(--main-color);
+    color: #fff;
+}
