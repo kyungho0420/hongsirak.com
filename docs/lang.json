@@ -1,5 +1,7 @@
 {
     "ko": {
+        "home_title": "홍시락",
+        "home_description": "전주 프리미엄 도시락 & 케이터링",
         "meta_title": "홍시락 - 프리미엄 수제 도시락 & 케이터링",
         "meta_description": "전주 전 지역 배달. 실속형부터 고급 프리미엄, 뷔페 세트까지 정성을 다해 준비합니다.",
         "nav_home": "홈",
@@ -88,6 +90,8 @@
         "btn_talk": "네이버 톡톡 상담"
     },
     "en": {
+        "home_title": "HongsiRak",
+        "home_description": "Jeonju Premium Bento & Catering",
         "meta_title": "HongsiRak - Premium Catering & Bento",
         "meta_description": "Delivery available all over Jeonju. We prepare everything from practical boxes to premium sets and buffets with care.",
         "nav_home": "Home",
