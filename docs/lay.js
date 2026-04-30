@@ -18,9 +18,9 @@ const siteConfig = {
         id: 'home',
         target: '#home',
         effect: '', // 기본 슬라이드 효과
-        overlay: 'gradient',
+        overlay: 'dotted',
         image_type: 'cover',
-        image_count: 3,
+        image_count: 1,
         image_slide: 5,
         image_path: './section/home/',
         image_format: 'jpg'
