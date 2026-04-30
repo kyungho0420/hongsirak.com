@@ -91,21 +91,14 @@
         "guide_order_label": "주문 안내",
         "guide_order_desc": "최소 5~6일 전 예약 권장 (단체 주문 시 메뉴 조율 가능)",
 
-        "section_location_title": "오시는 길 & 문의",
         "section_location_desc": "홍시락은 언제나 고객님의 문의를 환영합니다.",
-        "address_label": "오시는 길",
-        "contact_label": "연락처",
         "price_label_standard": "실속형",
         "price_label_premium": "프리미엄",
         "price_label_unit": "1인 기준",
         "btn_call": "전화 상담",
         "btn_talk": "네이버 톡톡 상담",
 
-        "section_contact_title": "문의하기",
-        "section_contact_desc": "도시락 및 케이터링 관련 문의사항을 남겨주시면 정성껏 답변해 드리겠습니다.",
-        "form_placeholder_email": "이메일 주소",
-        "form_placeholder_msg": "문의 내용을 입력해 주세요.",
-        "btn_submit": "보내기"
+        "btn_talk": "네이버 톡톡 상담"
     },
     "en": {
         "meta_title": "HongsiRak - Premium Catering & Bento",
@@ -161,20 +154,13 @@
         "guide_delivery_label": "Delivery Info",
         "guide_order_label": "Order Info",
 
-        "section_location_title": "Location & Inquiry",
         "section_location_desc": "HongsiRak always welcomes your inquiries.",
-        "address_label": "Address",
-        "contact_label": "Contact",
         "price_label_standard": "Standard",
         "price_label_premium": "Premium",
         "price_label_unit": "Per Person",
         "btn_call": "Call Now",
         "btn_talk": "Naver Talk",
 
-        "section_contact_title": "Contact Us",
-        "section_contact_desc": "Please leave your message, and we will get back to you soon.",
-        "form_placeholder_email": "Email",
-        "form_placeholder_msg": "Message",
-        "btn_submit": "Send"
+        "btn_talk": "Naver Talk"
     }
 }
