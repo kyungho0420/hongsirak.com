@@ -21,7 +21,7 @@ const siteConfig = {
         overlay: 'dotted',
         image_type: 'cover',
         image_count: 1,
-        image_slide: 5,
+        image_slide: false;
         image_path: './section/home/',
         image_format: 'jpg'
     },
